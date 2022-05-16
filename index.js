@@ -7,9 +7,9 @@ const Manager = require('./team/Manager');
 
 const generateHTML = require('./src/generateHTML');
 
-const teamArray = []; 
+const profilesArray = []; 
 
-const addManager = () => {
+const init = () => {
     return inquirer.prompt ([
         {
             type: 'input',
@@ -69,7 +69,7 @@ const addManager = () => {
         const  { name, id, email, officeNumber } = managerInput; 
         const manager = new Manager (name, id, email, officeNumber);
 
-        teamArray.push(manager); 
+        profilesArray.push(manager); 
         console.log(manager); 
     })
 };
@@ -174,20 +174,20 @@ const addEmployee = () => {
             console.log(employee);
         }
 
-        teamArray.push(employee); 
+        profilesArray.push(employee); 
 
         if (confirmAddEmployee) {
-            return addEmployee(teamArray); 
+            return addEmployee(profilesArray); 
         } else {
-            return teamArray;
+            return profilesArray;
         }
     })
 
 };
 
-addManager()
+init()
   .then(addEmployee)
-  .then((teamArray) => fs.writeFileSync('./dist/index.html', generateHTML(teamArray)))
+  .then((profilesArray) => fs.writeFileSync('./dist/index.html', generateHTML(profilesArray)))
   .then(() => console.log('Successfully wrote to index.html'))
   .catch(err => {
  console.log(err);
