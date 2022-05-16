@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,7 @@
     "jest": "^26.0.1"
   },
   "dependencies": {
-    "inquirer": "^7.1.0"
+    "inquirer": "^8.2.0"
   },
   "homepage": "https://github.com/MitchellM27/Team-Profile-Generator#readme"
   

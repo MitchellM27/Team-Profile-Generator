@@ -185,26 +185,10 @@ const addEmployee = () => {
 
 };
 
-
-const writeFile = data => {
-    fs.writeFile('./dist/index.html', data, err => {
-        if (err) {
-            console.log(err);
-            return;
-        } else {
-            console.log("Your team profile has been successfully created! Please check out the index.html")
-        }
-    })
-}; 
-
 addManager()
   .then(addEmployee)
-  .then(teamArray => {
-    return generateHTML(teamArray);
-  })
-  .then(pageHTML => {
-    return writeFile(pageHTML);
-  })
+  .then((teamArray) => fs.writeFileSync('./dist/index.html', generateHTML(teamArray)))
+  .then(() => console.log('Successfully wrote to index.html'))
   .catch(err => {
  console.log(err);
   });
