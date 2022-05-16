@@ -6,4 +6,6 @@
 * Points of Emphasis: The project will show an understanding of Object-Oriented programming. 
 * Completion: This project is completed when the application code is submitted, and a video exhibiting its capabilies is recorded then posted here:
 
+https://user-images.githubusercontent.com/94812297/168525542-ac11f1b5-eb05-43a5-9616-60ebfb357317.mp4
+
 * Application: ![Image of the functioning application including tests, inquirer, and the resulting html in browser"](./assets/TeamProfileGeneratorFunctionality.png)
